@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 flex items-center justify-center px-4 py-12">
+  <div class="max-w-md w-full">
+    <%= link_to root_path, class: "flex items-center justify-center space-x-3 mb-8" do %>
+      <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+        <span class="text-white font-bold text-xl">B</span>
+      </div>
+      <span class="text-2xl font-semibold text-white">Budi</span>
+    <% end %>
+
+    <div class="bg-white rounded-2xl shadow-2xl p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">Reset password</h2>
+      <p class="text-gray-600 mb-8">Enter your email to receive reset instructions</p>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-6" }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div>
+          <%= f.label :email, class: "block text-sm font-semibold text-gray-900 mb-2" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",
+              class: "w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400" %>
+        </div>
+
+        <div>
+          <%= f.submit "Send reset instructions", class: "w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2" %>
+        </div>
+      <% end %>
+
+      <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+        <%= link_to "Back to sign in", new_user_session_path, class: "text-sm text-purple-600 hover:text-purple-700 font-semibold" %>
+      </div>
+    </div>
+  </div>
+</div>

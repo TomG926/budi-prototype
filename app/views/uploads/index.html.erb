@@ -1,0 +1,99 @@
+<div class="max-w-7xl mx-auto px-6 py-12">
+  <div class="mb-10">
+    <h1 class="text-4xl font-bold text-gray-900 mb-2">Data Uploads</h1>
+    <p class="text-gray-600">Manage and analyze your CSV imports</p>
+  </div>
+
+  <% if @uploads.any? %>
+    <div class="grid gap-4">
+      <% @uploads.each do |upload| %>
+        <%= link_to upload_path(upload), class: "group block" do %>
+          <div class="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-purple-200 transition-all duration-300 p-6">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <div class="flex items-center space-x-4 mb-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="flex items-center space-x-2 mb-1">
+                      <h3 class="text-lg font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
+                        <%= upload.name.present? ? upload.name : "Upload ##{upload.id}" %>
+                      </h3>
+                      <% if upload.industry_type && upload.industry_type != 'other' %>
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-700">
+                          <%= IndustryPromptsService.for_industry(upload.industry_type)[:name] %>
+                        </span>
+                      <% end %>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-0.5"><%= upload.created_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center space-x-6 mt-4">
+                  <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-500">Status:</span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold
+                      <%= case upload.status
+                          when 'done'
+                            'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                          when 'processing'
+                            'bg-amber-50 text-amber-700 border border-amber-200'
+                          when 'failed'
+                            'bg-red-50 text-red-700 border border-red-200'
+                          else
+                            'bg-gray-50 text-gray-700 border border-gray-200'
+                          end %>">
+                      <%= upload.status.capitalize %>
+                    </span>
+                  </div>
+                  
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                    </svg>
+                    <span class="text-sm font-medium text-gray-900"><%= upload.data_rows.count %></span>
+                    <span class="text-sm text-gray-500">rows</span>
+                  </div>
+                  
+                  <% if upload.has_power_bi_integration? %>
+                    <div class="flex items-center space-x-2">
+                      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span class="text-sm text-gray-600">Power BI Connected</span>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+              
+              <div class="ml-4">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-16 text-center">
+      <div class="max-w-md mx-auto">
+        <div class="w-20 h-20 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">No uploads yet</h3>
+        <p class="text-gray-600 mb-8">Get started by uploading your first CSV file</p>
+        <%= link_to new_upload_path, class: "inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-200" do %>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          <span>Upload CSV</span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,57 @@
+<div class="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 flex items-center justify-center px-4 py-12">
+  <div class="max-w-5xl mx-auto text-center">
+    <div class="mb-12">
+      <div class="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
+        <span class="text-white font-bold text-5xl">B</span>
+      </div>
+      <h1 class="text-6xl font-bold text-white mb-6">Budi</h1>
+      <p class="text-xl text-blue-100 mb-4 max-w-2xl mx-auto">
+        Transform your data into powerful insights with AI-powered analysis
+      </p>
+      <p class="text-lg text-blue-200 max-w-xl mx-auto mb-12">
+        Upload CSV files, get intelligent recommendations, and unlock the full potential of your data
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+          </svg>
+        </div>
+        <h3 class="text-white font-semibold text-lg mb-2">Smart Upload</h3>
+        <p class="text-blue-100 text-sm">Any CSV structure, automatic schema detection</p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-white font-semibold text-lg mb-2">AI Analysis</h3>
+        <p class="text-blue-100 text-sm">Power BI AI visuals for intelligent insights</p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-white font-semibold text-lg mb-2">Fast & Secure</h3>
+        <p class="text-blue-100 text-sm">Processed in the background, stored securely</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <%= link_to new_user_registration_path, class: "bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-200 w-full sm:w-auto" do %>
+        Get Started
+      <% end %>
+      <%= link_to new_user_session_path, class: "bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-200 w-full sm:w-auto" do %>
+        Sign In
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Budi Prototype" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Budi Prototype">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_importmap_tags %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Tailwind CSS CDN %>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 antialiased">
+    <% if user_signed_in? %>
+      <nav class="bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+          <div class="flex items-center justify-between">
+            <%= link_to authenticated_root_path, class: "flex items-center space-x-3" do %>
+              <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-lg">B</span>
+              </div>
+              <span class="text-xl font-semibold text-gray-900">Budi</span>
+            <% end %>
+            <div class="flex items-center space-x-6">
+              <%= link_to "Uploads", uploads_path, class: "text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors" %>
+              <%= link_to "Analyses", analyses_path, class: "text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors" %>
+              <%= link_to new_upload_path, class: "bg-gradient-to-r from-purple-600 to-blue-600 text-white px-5 py-2 rounded-full font-medium text-sm hover:shadow-lg transition-all duration-200" do %>
+                <span class="flex items-center space-x-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                  <span>New Upload</span>
+                </span>
+              <% end %>
+              <div class="flex items-center space-x-3 pl-6 border-l border-gray-200">
+                <span class="text-sm text-gray-600"><%= current_user.email %></span>
+                <%= button_to "Sign out", destroy_user_session_path, method: :delete, form: { class: "inline" }, class: "text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors bg-transparent border-0 p-0 cursor-pointer" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <% end %>
+    
+    <% if notice %>
+      <div class="bg-emerald-50 border-l-4 border-emerald-400 p-4">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-emerald-700"><%= notice %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="bg-red-50 border-l-4 border-red-400 p-4">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-red-700"><%= alert %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    
+    <main class="min-h-screen">
+      <%= yield %>
+    </main>
+  </body>
+</html>

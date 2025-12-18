@@ -1,0 +1,14 @@
+appointment_date,client_name,service_name,staff_name,amount,duration_minutes,payment_method,tip_amount,discount,product_sales,notes
+2024-12-06 09:00:00,Patricia Clark,Haircut,Emma Wilson,45.00,30,Credit Card,8.00,0.00,12.50,Regular client - prefers short layers
+2024-12-06 10:00:00,Nancy Lewis,Hair Color Touch Up,Lisa Anderson,95.00,75,Cash,18.00,0.00,25.00,First time color service
+2024-12-06 11:30:00,Helen Walker,Full Highlight & Cut,Maria Garcia,175.00,165,Credit Card,32.00,10.00,45.00,Special occasion - wedding prep
+2024-12-06 14:00:00,Carol Allen,Bridal Package,Lisa Anderson,350.00,240,Cash,70.00,25.00,85.00,Premium package booked
+2024-12-06 16:30:00,Lisa Hall,Trim & Blow Dry,Emma Wilson,42.00,35,Debit Card,7.00,0.00,8.00,Quick appointment
+2024-12-07 09:30:00,Marie Wright,Balayage,Lisa Anderson,185.00,150,Credit Card,30.00,0.00,35.00,Follow-up appointment
+2024-12-07 12:00:00,Sharon Lopez,Haircut & Styling,Emma Wilson,55.00,45,Cash,10.00,0.00,15.00,Regular maintenance
+2024-12-07 14:30:00,Donna Green,Hair Treatment & Color,Maria Garcia,140.00,120,Credit Card,25.00,15.00,30.00,Treatment package
+2024-12-07 16:00:00,Barbara Baker,Blow Dry,Emma Wilson,35.00,30,Debit Card,6.00,0.00,0.00,Walk-in appointment
+2024-12-08 10:00:00,Susan Gonzalez,Root Color,Lisa Anderson,90.00,60,Credit Card,15.00,0.00,20.00,Monthly touch-up
+2024-12-08 11:30:00,Joyce Nelson,Full Service Package,Maria Garcia,225.00,210,Cash,45.00,20.00,60.00,Premium service
+2024-12-08 14:00:00,Betty Carter,Haircut,Emma Wilson,45.00,30,Credit Card,8.00,0.00,10.00,Standard cut
+2024-12-08 15:30:00,Margaret Mitchell,Highlights & Treatment,Lisa Anderson,165.00,150,Debit Card,28.00,0.00,40.00,Seasonal update

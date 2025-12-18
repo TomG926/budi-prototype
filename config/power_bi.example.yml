@@ -1,0 +1,20 @@
+# Power BI Configuration Example
+# Copy this to config/initializers/power_bi.rb or use Rails credentials
+#
+# To set credentials using Rails encrypted credentials:
+#   EDITOR="code --wait" bin/rails credentials:edit
+#
+# Then add:
+#
+# power_bi:
+#   tenant_id: "your-tenant-id"           # Azure AD Tenant ID
+#   client_id: "your-client-id"            # Azure AD App Registration Client ID
+#   client_secret: "your-client-secret"    # Azure AD App Registration Client Secret
+#   workspace_id: "your-workspace-id"      # Power BI Workspace ID (optional, can use "myorg")
+#
+# Or set via environment variables:
+#   POWER_BI_TENANT_ID
+#   POWER_BI_CLIENT_ID
+#   POWER_BI_CLIENT_SECRET
+#   POWER_BI_WORKSPACE_ID
+

@@ -1,0 +1,19 @@
+appointment_date,client_name,service_name,staff_name,amount,duration_minutes,payment_method,tip_amount,discount
+2024-12-01 09:00:00,Sarah Johnson,Haircut,Emma Wilson,45.00,30,Credit Card,8.00,0.00
+2024-12-01 10:30:00,Michelle Chen,Full Color & Cut,Maria Garcia,125.00,120,Cash,20.00,0.00
+2024-12-01 14:00:00,Jennifer Brown,Balayage Highlights,Lisa Anderson,180.00,150,Credit Card,30.00,10.00
+2024-12-01 16:30:00,Emily Davis,Blow Dry,Emma Wilson,35.00,30,Debit Card,5.00,0.00
+2024-12-02 09:30:00,Amanda White,Haircut & Styling,Emma Wilson,55.00,45,Credit Card,10.00,0.00
+2024-12-02 11:00:00,Jessica Martinez,Root Touch Up,Lisa Anderson,85.00,60,Cash,15.00,0.00
+2024-12-02 13:00:00,Ashley Taylor,Full Highlight Service,Maria Garcia,195.00,180,Credit Card,35.00,0.00
+2024-12-02 15:00:00,Samantha Lee,Trim & Style,Emma Wilson,40.00,30,Debit Card,7.00,0.00
+2024-12-03 10:00:00,Lauren Harris,Haircut,Lisa Anderson,45.00,30,Credit Card,9.00,0.00
+2024-12-03 11:30:00,Rachel Green,Ombre Coloring,Maria Garcia,165.00,150,Cash,25.00,15.00
+2024-12-03 14:30:00,Nicole King,Hair Treatment & Cut,Lisa Anderson,75.00,60,Credit Card,12.00,0.00
+2024-12-03 16:00:00,Brittany Young,Blow Dry & Style,Emma Wilson,38.00,30,Debit Card,6.00,0.00
+2024-12-04 09:00:00,Victoria Scott,Haircut & Color,Maria Garcia,135.00,120,Credit Card,22.00,0.00
+2024-12-04 12:00:00,Stephanie Adams,Full Service Package,Lisa Anderson,220.00,210,Cash,40.00,20.00
+2024-12-04 15:30:00,Megan Turner,Quick Trim,Emma Wilson,35.00,25,Debit Card,5.00,0.00
+2024-12-05 10:30:00,Danielle Parker,Highlights & Cut,Maria Garcia,155.00,135,Credit Card,28.00,0.00
+2024-12-05 13:30:00,Alexis Moore,Blow Dry,Emma Wilson,35.00,30,Cash,6.00,0.00
+2024-12-05 16:00:00,Kimberly Hill,Hair Treatment,Lisa Anderson,65.00,45,Credit Card,11.00,0.00
