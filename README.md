@@ -1,6 +1,10 @@
-# Budi Prototype - CSV to Power BI with AI Analysis
+# Budi Prototype - AI-Powered Business Intelligence Platform
 
-A Rails 8 prototype application that allows users to upload CSV files to a PostgreSQL database and automatically push the data to Power BI for AI-powered analysis and recommendations.
+Budi is a Rails 8 application that transforms business data into actionable insights through AI-powered analysis. Users can upload CSV files from any industry (salon, retail, restaurant, healthcare, etc.), which are automatically stored in PostgreSQL with dynamic schema detection. The platform supports seamless integration with Power BI's REST API for advanced data visualization and analysis, enabling businesses to push their data directly into Power BI datasets for comprehensive reporting.
+
+The platform leverages OpenAI's GPT-4o-mini model to generate industry-specific business recommendations, analyzing uploaded data with tailored prompts and metrics for each business sector. Users can interact with their data through an intelligent Q&A feature, asking questions in natural language and receiving data-driven answers that are automatically saved for future reference. The system automatically generates visual charts and graphs based on the data structure, highlighting key metrics like revenue by service, staff performance, and other business-critical insights.
+
+With user authentication powered by Devise, each user's data is securely scoped and isolated. The application provides a dedicated Analyses section where users can view all their AI-generated insights, save and revisit previous questions and answers, and trigger new analyses on their datasets. The modern, Revolut-inspired interface ensures a smooth user experience while delivering powerful business intelligence capabilities that work across diverse industries and data structures.
 
 ## Features
 
